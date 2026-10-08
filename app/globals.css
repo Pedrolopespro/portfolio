@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "lenis/dist/lenis.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-inter-tight);
+  --font-serif: var(--font-instrument-serif);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-inter-tight);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-marquee: marquee 48s linear infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes pulse-dot {
+    0% {
+      box-shadow: 0 0 0 0 rgb(134 239 172 / 0.6);
+    }
+    70%,
+    100% {
+      box-shadow: 0 0 0 10px rgb(134 239 172 / 0);
+    }
+  }
+}
+
+/*
+ * Single dark theme: warm black + cream (#E1E0CC).
+ * The hero photo has a #050505 background, so `--ink` matches it exactly.
+ */
+:root {
+  --cream: #e1e0cc;
+  --ink: #050505;
+  --background: #0b0b0a;
+  --foreground: #e1e0cc;
+  --card: #121211;
+  --card-foreground: #e1e0cc;
+  --popover: #121211;
+  --popover-foreground: #e1e0cc;
+  --primary: #e1e0cc;
+  --primary-foreground: #0b0b0a;
+  --secondary: #1a1a18;
+  --secondary-foreground: #e1e0cc;
+  --muted: #1a1a18;
+  --muted-foreground: rgb(225 224 204 / 0.62);
+  --accent: #1a1a18;
+  --accent-foreground: #e1e0cc;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgb(225 224 204 / 0.1);
+  --input: rgb(225 224 204 / 0.15);
+  --ring: rgb(225 224 204 / 0.5);
+  --radius: 0.75rem;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--cream);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Film-grain texture (SVG turbulence, no extra request). */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 220px 220px;
+  }
+
+  /* Fades the hero photo into the card: bottom edge on mobile, left + bottom on desktop. */
+  .hero-mask {
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
+  }
+  @media (min-width: 1024px) {
+    .hero-mask {
+      mask-image:
+        linear-gradient(to right, transparent 0%, #000 30%),
+        linear-gradient(to bottom, #000 62%, transparent 100%);
+      mask-composite: intersect;
+    }
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(225 224 204 / 0.35);
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.18em] text-muted-foreground uppercase sm:text-xs;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

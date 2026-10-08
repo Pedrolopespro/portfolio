@@ -32,9 +32,10 @@
 | 4 | Como eu entrego (método) | Como você resolve? |
 | 5 | Por que confiar (prova + retrato) | Já fez isso antes? |
 | 6 | Resultado (manifesto) | O que eu ganho? |
-| 7 | Trajetória | Onde trabalhou? |
-| 8 | Competências e formação | O que sabe usar? |
-| 9 | CTA final | Como falo com você? |
+| 7 | Projetos | Mostra o que já entregou? |
+| 8 | Trajetória | Onde trabalhou? |
+| 9 | Competências e formação | O que sabe usar? |
+| 10 | CTA final | Como falo com você? |
 
 ## 4. Seção por seção: layout + animação
 
@@ -68,16 +69,22 @@
 - Frase grande ocupando a tela: "Uma operação mais organizada, menos dependente de improviso e preparada para crescer."
 - **Revelação palavra a palavra ligada à rolagem** (opacidade 15% → 100%), no estilo Apple.
 
-### 7. Trajetória
+### 7. Projetos
+- 5 sites no ar: KMON VIP, Lima Ferreira Advogados, SMC Turismo e Locadora, AlergYa, Eixo Esportes.
+- Capturas reais (1440×900) dentro de uma moldura de navegador, com o domínio de cada site.
+- **Desktop:** galeria horizontal que anda com a rolagem vertical, com contador "01 / 05" e barra de progresso. Ao navegar pelo teclado, a galeria rola até o card focado.
+- **Celular e "reduzir movimento":** cards empilhados.
+
+### 8. Trajetória
 - Linha do tempo vertical cuja linha **cresce com a rolagem**. Cada cargo entra deslizando.
 - Datas em fonte mono. Todo o conteúdo fica visível, sem nada escondido em acordeão.
 
-### 8. Competências e formação
+### 9. Competências e formação
 - **Bento grid** com 4 blocos: Operações · IA & Automação · Sistemas & Suporte · Web & UX.
 - Chips entram em cascata e cada bloco tem spotlight no hover.
 - Formação em uma linha compacta logo abaixo.
 
-### 9. CTA final
+### 10. CTA final
 - "Vamos conversar?" gigante (pull-up), com botão **magnético** (segue levemente o cursor).
 - E-mail com **copiar ao clicar** (aviso "E-mail copiado"), WhatsApp e download do currículo.
 - Foto de fundo bem esmaecida (opcional).
@@ -87,7 +94,14 @@
 - Rolagem suave (Lenis) desligada automaticamente com "reduzir movimento".
 - `MotionConfig reducedMotion="user"`: quem pede menos movimento recebe só fades.
 
-## 5. Fotos necessárias
+## 5. Fotos
+
+**Recebida:** retrato P&B em fundo preto (966×640) → `public/images/pedro-hero.jpg`.
+Tratamento: convertido para P&B real, sombras uniformizadas em `#050505` (some a emenda com o fundo do site) e redução de ruído só nas áreas escuras. No desktop a foto fica num quadro com proporção fixa no canto superior direito, para o rosto não ficar atrás do texto em notebooks de tela baixa.
+
+**Ainda útil (opcional):** retrato vertical 4:5 para a seção "Por que confiar".
+
+### Planejamento original
 
 | # | Uso | Formato | Orientação |
 |---|---|---|---|
@@ -102,7 +116,7 @@ Dicas: luz natural, roupa escura ou neutra (combina com preto e creme), sem filt
 
 ## 6. Stack técnica
 
-- **Next.js 15 (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui**
+- **Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui**
 - `framer-motion` (animações), `lucide-react` (ícones), `lenis` (rolagem suave)
 - `next/image` (fotos otimizadas), `next/font` (fontes sem pular layout), `next/og` (imagem de compartilhamento no WhatsApp/LinkedIn)
 
@@ -122,7 +136,7 @@ public/images/        fotos · public/Curriculo_Pedro_Lopes.docx
 - Testado em 375px, 768px, 1280px e 1920px. Nenhum texto do nav com menos de 12px.
 - Título animado com `aria-label` (leitor de tela lê "Pedro", não palavra por palavra).
 - `npm run build` sem erros antes de cada push.
-- **Vercel:** em *Settings → Build & Deployment → Framework Preset* selecionar **Next.js** (hoje provavelmente está como "Other", por causa do HTML estático).
+- **Vercel:** o `vercel.json` já força o framework Next.js, sem precisar mudar nada no painel.
 
 ## 8. Etapas de execução
 
