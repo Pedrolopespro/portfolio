@@ -23,7 +23,19 @@ components/ui/        prisma-hero.tsx (hero + animações WordsPullUp)
 components/sections/  uma seção por arquivo
 components/motion/    Reveal, SpotlightCard, Magnetic, CountUp
 content/site.ts       todo o conteúdo
-public/               fotos, capturas dos projetos e currículo (.docx)
+public/               fotos, logos, capturas dos projetos e currículo (PDF)
+resume/               fonte do currículo em PDF (curriculo.html + build.mjs)
 ```
 
 Deploy automático na Vercel a cada push (`vercel.json` define o framework Next.js).
+
+## Currículo em PDF
+
+Fonte em `resume/curriculo.html` (A4, mesma identidade visual do site). Para gerar `public/Curriculo_Pedro_Lopes.pdf`:
+
+```bash
+node resume/build.mjs                      # sem link do portfólio
+node resume/build.mjs https://seu-dominio  # com link do portfólio no cabeçalho
+```
+
+Precisa do Playwright (`npx playwright install chromium` se não estiver instalado) e acesso ao Google Fonts.

@@ -9,7 +9,7 @@ export const profile = {
   phoneDisplay: "(61) 99218-0425",
   phoneHref: "tel:+5561992180425",
   whatsapp: "https://wa.me/5561992180425",
-  resume: "/Curriculo_Pedro_Lopes.docx",
+  resume: "/Curriculo_Pedro_Lopes.pdf",
 };
 
 export const nav = [

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Pedro Lopes — Currículo</title>
+<meta name="author" content="Pedro Lopes">
+<meta name="description" content="Currículo de Pedro Lopes — Analista de Operações e Automação com IA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  /* Same identity as the site (ink + cream), inverted for paper. */
+  :root {
+    --ink: #0b0b0a;
+    --text: #23231f;
+    --muted: #6b6a5e;
+    --line: #dcdacb;
+    --panel: #f4f3ec;
+    --cream: #e1e0cc;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    width: 210mm;
+    font-family: "Inter Tight", system-ui, sans-serif;
+    font-size: 8.9pt;
+    line-height: 1.42;
+    color: var(--text);
+    background: #fff;
+  }
+  a { color: inherit; text-decoration: none; }
+  .page { display: flex; flex-direction: column; min-height: 297mm; }
+
+  /* Header */
+  header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 9mm 14mm 7.5mm;
+    display: flex;
+    align-items: flex-end;
+    gap: 9mm;
+  }
+  header .who { flex: 1; }
+  .eyebrow {
+    font-family: "Geist Mono", monospace;
+    font-size: 6.6pt;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  header .eyebrow { color: rgb(225 224 204 / .6); }
+  h1 {
+    margin-top: 2.5mm;
+    font-size: 29pt;
+    line-height: .95;
+    font-weight: 600;
+    letter-spacing: -.045em;
+  }
+  h1 sup { font-size: .42em; font-weight: 400; vertical-align: .9em; margin-left: .5mm; }
+  .role {
+    margin-top: 2mm;
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 16pt;
+    line-height: 1.1;
+  }
+  .contacts {
+    margin-top: 3.6mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm 5mm;
+    font-size: 8.4pt;
+    color: rgb(225 224 204 / .85);
+  }
+  .contacts span::before { content: "·"; margin-right: 5mm; color: rgb(225 224 204 / .35); }
+  .contacts span:first-child::before { display: none; }
+  .photo {
+    width: 27mm;
+    height: 27mm;
+    border-radius: 3mm;
+    object-fit: cover;
+    filter: sepia(.12);
+    flex-shrink: 0;
+  }
+
+  /* Body */
+  .body { flex: 1; display: grid; grid-template-columns: 1fr 63mm; }
+  main { padding: 7mm 8mm 7mm 14mm; }
+  aside { background: var(--panel); padding: 7mm 11mm 7mm 7.5mm; }
+
+  section + section { margin-top: 4.6mm; }
+  h2 {
+    font-family: "Geist Mono", monospace;
+    font-size: 6.8pt;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 1.6mm;
+    margin-bottom: 2.2mm;
+    border-bottom: .6pt solid var(--line);
+  }
+  .summary { font-size: 9.4pt; line-height: 1.48; color: var(--ink); }
+  .summary em { font-family: "Instrument Serif", serif; font-size: 11pt; }
+
+  .job + .job { margin-top: 2.9mm; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  h3 { font-size: 9.8pt; font-weight: 600; letter-spacing: -.01em; color: var(--ink); }
+  .period { font-family: "Geist Mono", monospace; font-size: 7pt; color: var(--muted); white-space: nowrap; }
+  .org { font-family: "Instrument Serif", serif; font-style: italic; font-size: 10.4pt; color: var(--muted); line-height: 1.2; margin-top: .3mm; }
+  ul { list-style: none; margin-top: 1.4mm; }
+  li { position: relative; padding-left: 3.6mm; }
+  li + li { margin-top: .6mm; }
+  li::before { content: ""; position: absolute; left: 0; top: .72em; width: 2mm; height: .6pt; background: var(--muted); }
+
+  .project + .project { margin-top: 1.7mm; }
+  .project .head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .project b { font-weight: 600; color: var(--ink); }
+  .project .url { font-family: "Geist Mono", monospace; font-size: 6.8pt; color: var(--muted); white-space: nowrap; }
+
+  /* Aside */
+  .step { display: grid; grid-template-columns: 5mm 1fr; }
+  .step + .step { margin-top: 1.7mm; }
+  .step .n { font-family: "Geist Mono", monospace; font-size: 6.6pt; color: var(--muted); padding-top: .5mm; }
+  .step b { display: block; font-weight: 600; color: var(--ink); font-size: 9pt; }
+  .step p { color: var(--muted); font-size: 8pt; line-height: 1.3; }
+  .group + .group { margin-top: 2mm; }
+  .group b { font-weight: 600; color: var(--ink); }
+  .group p { font-size: 8pt; line-height: 1.38; color: var(--text); }
+  .edu + .edu { margin-top: 1.5mm; }
+  .edu b { display: block; font-weight: 600; color: var(--ink); }
+  .edu span { display: block; font-size: 7.9pt; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="who">
+      <p class="eyebrow">Currículo · Brasília — DF</p>
+      <h1>Pedro Lopes<sup>*</sup></h1>
+      <p class="role">Analista de Operações e Automação com IA</p>
+      <p class="contacts">
+        <span><a href="tel:+5561992180425">(61) 99218-0425</a></span>
+        <span><a href="mailto:lopeshpl@gmail.com">lopeshpl@gmail.com</a></span>
+        <span><a href="https://wa.me/5561992180425">WhatsApp</a></span>
+        <!--PORTFOLIO-->
+      </p>
+    </div>
+    <img class="photo" src="foto.jpg" alt="Foto de Pedro Lopes">
+  </header>
+
+  <div class="body">
+    <main>
+      <section>
+        <h2>Resumo</h2>
+        <p class="summary">
+          Profissional de tecnologia com mais de 10 anos entre suporte a sistemas, supervisão de atendimento N2 e projetos digitais,
+          com atuação no Ministério da Justiça (INFOSEG), na PRF e na antiga SEPPIR. Organizo demandas e rotinas, estruturo controles
+          e uso IA no dia a dia para pesquisar, planejar e documentar, transformando operação pesada em <em>operação que roda.</em>
+        </p>
+      </section>
+
+      <section>
+        <h2>Experiência profissional</h2>
+
+        <div class="job">
+          <div class="job-head"><h3>Profissional autônomo de tecnologia e marketing digital</h3><span class="period">set. 2023 — atual</span></div>
+          <p class="org">Projetos próprios e clientes</p>
+          <ul>
+            <li>Levantamento de necessidades, organização de demandas e acompanhamento de entregas de sites, páginas de vendas e campanhas digitais.</li>
+            <li>Criação, publicação e manutenção de sites em WordPress, com configuração de ferramentas digitais conforme a necessidade de cada cliente.</li>
+            <li>Uso de IA (ChatGPT) para estruturar pesquisas, planos de trabalho e conteúdos, revisando e adaptando as respostas ao contexto de cada projeto.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><h3>Designer Gráfico</h3><span class="period">set. 2021 — set. 2023</span></div>
+          <p class="org">Evo Coaching</p>
+          <ul>
+            <li>Atendimento às demandas de equipes internas, com criação de sites e páginas de vendas e produção de materiais para produtos, campanhas e eventos.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><h3>Web Designer</h3><span class="period">jul. 2019 — dez. 2020</span></div>
+          <p class="org">Almatech</p>
+          <ul>
+            <li>Desenvolvimento de sites para empresas nacionais e internacionais, com foco em usabilidade e adequação às necessidades do negócio.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><h3>Suporte Técnico e Supervisão de Atendimento N2</h3><span class="period">2013 — 2016</span></div>
+          <p class="org">Ministério da Justiça e unidades atendidas</p>
+          <ul>
+            <li>Supervisão do atendimento de segundo nível no INFOSEG, com acompanhamento de ocorrências, demandas complexas e apoio aos usuários.</li>
+            <li>Cadastro de novos usuários e suporte a sistemas, Windows, Office, e-mails, softwares, hardware e periféricos.</li>
+            <li>Técnico responsável pelo atendimento da antiga SEPPIR e atuação na PRF durante os preparativos das Olimpíadas Rio 2016.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projetos selecionados</h2>
+        <div class="project"><div class="head"><b>KMON VIP</b><a class="url" href="https://www.kmonvip.com/">kmonvip.com</a></div><p>Transporte executivo, blindado e diplomático, com pedido de cotação.</p></div>
+        <div class="project"><div class="head"><b>Lima Ferreira Advogados</b><a class="url" href="https://limaferreiraadvogados.com.br/empresarial/">limaferreiraadvogados.com.br</a></div><p>Landing page do “Raio-X da Dívida Empresarial”: diagnóstico jurídico para empresas.</p></div>
+        <div class="project"><div class="head"><b>SMC Turismo e Locadora</b><a class="url" href="https://www.smclocadora.com.br/">smclocadora.com.br</a></div><p>Transporte executivo em Brasília: transfer, corporativo, blindados e escolta.</p></div>
+        <div class="project"><div class="head"><b>AlergYa</b><a class="url" href="https://alergya.vercel.app/">alergya.vercel.app</a></div><p>Clínica de alergologia e imunologia, com agendamento pelo WhatsApp.</p></div>
+        <div class="project"><div class="head"><b>Eixo Esportes</b><a class="url" href="https://eixoesportes.vercel.app/">eixoesportes.vercel.app</a></div><p>Catálogo de moda fitness com filtro por categoria e pedido pelo WhatsApp.</p></div>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>O que entrego</h2>
+        <div class="step"><span class="n">01</span><div><b>Mapear gargalos</b><p>Onde o trabalho trava e o que se repete.</p></div></div>
+        <div class="step"><span class="n">02</span><div><b>Estruturar processos</b><p>Demandas, prioridades e responsáveis claros.</p></div></div>
+        <div class="step"><span class="n">03</span><div><b>Automatizar com IA</b><p>Pesquisa, planejamento e documentação, com revisão humana.</p></div></div>
+        <div class="step"><span class="n">04</span><div><b>Criar controles</b><p>O que está aberto, atrasado e resolvido.</p></div></div>
+      </section>
+
+      <section>
+        <h2>Competências</h2>
+        <div class="group"><b>Operações</b><p>Organização de rotinas e demandas&nbsp;· Ocorrências e prioridades&nbsp;· Levantamento de necessidades</p></div>
+        <div class="group"><b>IA &amp; Automação</b><p>IA aplicada ao trabalho&nbsp;· ChatGPT para pesquisa, planejamento e documentação</p></div>
+        <div class="group"><b>Sistemas &amp; Suporte</b><p>Suporte a sistemas&nbsp;· Cadastro e orientação de usuários&nbsp;· Windows e Office</p></div>
+        <div class="group"><b>Web &amp; UX</b><p>WordPress e Elementor&nbsp;· HTML, PHP e SQL&nbsp;· UX/UI</p></div>
+      </section>
+
+      <section>
+        <h2>Formação e idiomas</h2>
+        <div class="edu"><b>Desenvolvimento Web</b><span>EIBNETI · técnico, concluído em 2016</span></div>
+        <div class="edu"><b>Ciência da Computação</b><span>IESB · superior incompleto</span></div>
+        <div class="edu"><b>Publicidade e Propaganda</b><span>IESB · curso trancado</span></div>
+        <div class="edu"><b>Inglês</b><span>Leitura técnica, em aperfeiçoamento</span></div>
+      </section>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

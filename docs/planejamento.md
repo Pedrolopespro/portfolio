@@ -127,7 +127,7 @@ app/            layout.tsx · page.tsx · globals.css · opengraph-image.tsx
 components/ui/  prisma-hero.tsx (WordsPullUp, WordsPullUpMultiStyle) + componentes shadcn
 components/sections/  hero · credibility · pains · method · proof · manifesto · journey · skills · contact
 content/site.ts       todos os textos num só lugar
-public/images/        fotos · public/Curriculo_Pedro_Lopes.docx
+public/images/        fotos · public/Curriculo_Pedro_Lopes.pdf (gerado por resume/build.mjs)
 ```
 `components/ui` é o caminho padrão do shadcn (alias `@/components/ui` no `components.json`). Sem ele, o CLI do shadcn instala componentes no lugar errado e os imports quebram.
 

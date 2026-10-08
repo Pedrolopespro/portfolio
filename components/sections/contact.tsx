@@ -75,7 +75,7 @@ export function Contact() {
             </a>
             <a href={profile.resume} download className={pill}>
               <Download className="h-4 w-4" />
-              Currículo (.docx)
+              Currículo (PDF)
             </a>
           </div>
           <a href={profile.phoneHref} className="font-mono text-sm text-cream/50 transition-colors hover:text-cream">
