@@ -48,8 +48,9 @@
 - Animação: letreiro sobe, depois texto (0.5s) e depois botão (0.7s).
 
 ### 2. Faixa de credibilidade
-- Marquee infinito e lento com Ministério da Justiça · PRF · INFOSEG · SEPPIR · Rio 2016 · 10+ anos.
-- Só texto, sem logotipos oficiais. Pausa no hover e respeita "reduzir movimento".
+- Letreiro infinito com os logos em **monocromia creme** (fundo removido): Ministério da Justiça e Segurança Pública, PRF (brasão + sigla juntos), Rio 2016, KMON VIP, Lima Ferreira Advogados. INFOSEG e SEPPIR, sem logo, entram como texto no mesmo peso visual.
+- Rótulo "Onde atuei e para quem entreguei". Logos a 55% de opacidade e 100% no hover. O letreiro pausa no hover; com "reduzir movimento" vira uma grade estática.
+- Arquivos tratados em `public/images/logos/`.
 
 ### 3. Onde eu atuo
 - 2 colunas: à esquerda, título fixo (sticky) "Transformo operação pesada em operação *que roda*."

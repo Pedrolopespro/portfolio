@@ -27,14 +27,20 @@ export const hero = {
   cta: "Vamos conversar",
 };
 
-export const credibility = [
-  "Ministério da Justiça",
-  "Polícia Rodoviária Federal",
-  "INFOSEG",
-  "SEPPIR",
-  "Olimpíadas Rio 2016",
-  "10+ anos em tecnologia",
-];
+// Logos are pre-rendered in cream on transparent (public/images/logos).
+// `height` is the desktop display height in px, tuned so every mark has a similar optical weight.
+export const credibility = {
+  label: "Onde atuei e para quem entreguei",
+  items: [
+    { label: "Ministério da Justiça e Segurança Pública", logo: { src: "/images/logos/mjsp.png", width: 436, height: 236 }, height: 52 },
+    { label: "Polícia Rodoviária Federal", logo: { src: "/images/logos/prf.png", width: 644, height: 300 }, height: 50 },
+    { label: "INFOSEG" },
+    { label: "SEPPIR" },
+    { label: "Rio 2016", logo: { src: "/images/logos/rio2016.png", width: 813, height: 300 }, height: 50 },
+    { label: "KMON VIP", logo: { src: "/images/logos/kmon.svg", width: 780, height: 200 }, height: 30 },
+    { label: "Lima Ferreira Advogados", logo: { src: "/images/logos/lima-ferreira.png", width: 979, height: 239 }, height: 38 },
+  ],
+};
 
 export const gains = {
   eyebrow: "01 — O que sua empresa ganha comigo",
